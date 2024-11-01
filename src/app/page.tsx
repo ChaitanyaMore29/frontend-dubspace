@@ -25,8 +25,8 @@ export default function Home() {
       <div className="flex w-full max-w-5xl bg-[#1c1c1c] rounded-lg shadow-2xl shadow-black overflow-hidden">
         {/* Left Side Image */}
         <div className="flex-1 hidden md:block">
-          <img 
-            src="https://img.freepik.com/free-photo/overhead-view-blue-craft-paper-plain-orange-background_23-2147981657.jpg?t=st=1730486462~exp=1730490062~hmac=74c17c0c60537cca2eb92258f494630f87cd14d56e40ab34362b13c53941c32b&w=740" 
+          <img
+            src="https://img.freepik.com/free-photo/overhead-view-blue-craft-paper-plain-orange-background_23-2147981657.jpg?t=st=1730486462~exp=1730490062~hmac=74c17c0c60537cca2eb92258f494630f87cd14d56e40ab34362b13c53941c32b&w=740"
             alt="Description of the image"
             className="object-cover w-full h-full " // Added blur effect
           />
@@ -55,16 +55,16 @@ export default function Home() {
               <Input
                 id="email"
                 type="email"
-                // placeholder="example@xyz.com"
-                // value={email}
-                // onChange={(e) => setEmail(e.target.value)}
-                // required
-                // className="bg-[#1c1c1c] text-white placeholder-[#78716C]" // Match placeholder color
+                placeholder="example@xyz.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="bg-[#1c1c1c] text-white placeholder-[#78716C]" // Set text and placeholder colors
                 style={{
                   WebkitBoxShadow: "0 0 0 30px #1c1c1c inset",
-                  WebkitTextFillColor: "white",
                 }}
               />
+
             </div>
             <div className="space-y-2">
               <label htmlFor="password" className="text-gray-300">
@@ -76,7 +76,7 @@ export default function Home() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  // placeholder="Enter your password"
+                  placeholder="Enter your password"
                   required
                   className="bg-[#1c1c1c] text-white placeholder-[#78716C]" // Match placeholder color
                 />
