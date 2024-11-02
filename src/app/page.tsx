@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -13,9 +14,13 @@ export default function Home() {
   const [showPassword, setShowPassword] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
+  // Ensure the component only runs on the client side
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  // Return null during SSR to avoid mismatch
+  if (!isClient) return null;
 
   return (
     <div
@@ -127,9 +132,9 @@ export default function Home() {
           {/* Sign Up Link */}
           <div className="text-center text-xs md:text-sm text-gray-400">
             <span>Don't have an account? </span>
-            <a href="#" className="text-primary-500 hover:text-primary-600 font-medium">
+            <Link href="/signup" className="text-primary-500 hover:text-primary-600 font-medium">
               Sign up
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

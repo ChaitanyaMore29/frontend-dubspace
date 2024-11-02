@@ -6,6 +6,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, Mail } from "lucide-react";
+import Link from "next/link"; // Import Link
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -40,17 +41,17 @@ export default function SignUp() {
           className="flex flex-col w-full md:w-1/2 p-8 space-y-4"
         >
           <div className="text-center space-y-2">
-            <h1 className="text-2xl font-bold tracking-tighter text-white">
+            <h1 className="text-3xl font-bold tracking-tighter text-white">
               Create Your Account
             </h1>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm md:text-base">
               Sign up to get started with DubSpace
             </p>
           </div>
           <form className="space-y-3">
             {/* Email Field */}
             <div className="space-y-1">
-              <label htmlFor="email" className="text-gray-300 text-sm">
+              <label htmlFor="email" className="text-gray-300 text-sm md:text-base">
                 Email
               </label>
               <Input
@@ -67,23 +68,24 @@ export default function SignUp() {
 
             {/* Company Name Field */}
             <div className="space-y-1">
-              <label htmlFor="company" className="text-gray-300 text-sm">
+              <label htmlFor="company" className="text-gray-300 text-sm md:text-base">
                 Company Name
               </label>
               <Input
                 id="company"
                 type="text"
-                placeholder="Enter your company name"
+                placeholder="Your Company Name"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 required
                 className="bg-[#1c1c1c] text-white placeholder-[#78716C] text-sm"
+                style={{ WebkitBoxShadow: "0 0 0 30px #1c1c1c inset" }}
               />
             </div>
 
             {/* Password Field */}
             <div className="space-y-1">
-              <label htmlFor="password" className="text-gray-300 text-sm">
+              <label htmlFor="password" className="text-gray-300 text-sm md:text-base">
                 Password
               </label>
               <div className="relative">
@@ -108,7 +110,7 @@ export default function SignUp() {
 
             {/* Confirm Password Field */}
             <div className="space-y-1">
-              <label htmlFor="confirm-password" className="text-gray-300 text-sm">
+              <label htmlFor="confirm-password" className="text-gray-300 text-sm md:text-base">
                 Confirm Password
               </label>
               <div className="relative">
@@ -117,7 +119,7 @@ export default function SignUp() {
                   type={showConfirmPassword ? "text" : "password"}
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Re-enter your password"
+                  placeholder="Confirm your password"
                   required
                   className="bg-[#1c1c1c] text-white placeholder-[#78716C] text-sm"
                 />
@@ -132,34 +134,18 @@ export default function SignUp() {
             </div>
 
             {/* Sign Up Button */}
-            <Button type="submit" className="w-full text-sm md:text-base" variant="custom">
+            <Button type="submit" className="w-full text-sm" variant="custom">
               Sign up
             </Button>
           </form>
 
           {/* Already have an account? */}
-          <div className="text-center text-xs md:text-sm text-gray-400 mt-4">
+          <div className="text-center text-xs md:text-sm text-gray-400">
             <span>Already have an account? </span>
-            <a href="/login" className="text-primary-500 hover:text-primary-600 font-medium">
+            <Link href="/" className="text-primary-500 hover:text-primary-600 font-medium">
               Sign in
-            </a>
+            </Link> {/* Updated with Link */}
           </div>
-
-          {/* Divider */}
-          <div className="relative py-4">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-700"></div>
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-[#1c1c1c] px-2 text-gray-400">Or sign up with</span>
-            </div>
-          </div>
-
-          {/* Sign Up with Google Button */}
-          <Button variant="custom" className="w-full text-sm md:text-base">
-            <Mail className="mr-2 h-4 w-4" />
-            Sign up with Google
-          </Button>
         </motion.div>
       </div>
     </div>
