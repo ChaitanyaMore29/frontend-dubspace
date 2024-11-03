@@ -69,12 +69,13 @@ export default function OTPValidation() {
                     </InputOTPGroup>
                 </InputOTP>
 
-                {/* Submit Button with Gradient and Rounded Shape */}
+                {/* Submit Button with Gradient and Hover Effects */}
                 <Button
                     type="submit"
-                    className="w-full text-sm md:text-base rounded-full py-3 text-white transition-transform duration-150 transform hover:scale-105"
+                    className="w-full text-sm md:text-base rounded-full py-3 text-white transition-transform duration-200 transform hover:scale-105"
                     style={{
                         background: "linear-gradient(135deg, #ff8a00, #e52e71)",
+                        boxShadow: "0px 4px 15px rgba(229, 46, 113, 0.3)",
                     }}
                 >
                     Submit
@@ -86,6 +87,13 @@ export default function OTPValidation() {
                     Resend OTP
                 </Link>
             </motion.div>
+
+            <style jsx>{`
+                .button-gradient:hover {
+                    background: linear-gradient(135deg, #e52e71, #ff8a00);
+                    box-shadow: 0px 6px 20px rgba(229, 46, 113, 0.5);
+                }
+            `}</style>
         </div>
     );
 }
